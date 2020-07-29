@@ -23,7 +23,7 @@ public class MenusService {
         List<MenusVo> menus = new ArrayList<>();
 
         for (int i = 0;i<menuList.size();i++){
-            if (StringUtils.isEmpty(menuList.get(i).getParentid())){
+            if (menuList.get(i).getParentid()==0){
                 MenusVo menusVo = new MenusVo();
                 menusVo.setId(menuList.get(i).getId());
                 menusVo.setName(menuList.get(i).getName());
@@ -36,8 +36,8 @@ public class MenusService {
             ArrayList<MenusVo> voArrayList = new ArrayList<>();
 
             for (int j = 0;j<menuList.size();j++){
-                if (StringUtils.isEmpty(menuList.get(j).getParentid())) continue;
-                if (menus.get(i).getId().equals(menuList.get(j).getParentid())){
+                if (menuList.get(j).getParentid()==0) continue;
+                if (menus.get(i).getId() == (menuList.get(j).getParentid())){
                     MenusVo menusVo = new MenusVo();
                     menusVo.setId(menuList.get(j).getId());
                     menusVo.setName(menuList.get(j).getName());

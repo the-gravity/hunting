@@ -8,7 +8,7 @@ import java.util.List;
 
 @Data
 public class MenusVo implements Serializable {
-    private String id;
+    private int id;
 
     private String name;
 

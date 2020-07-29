@@ -11,11 +11,12 @@ import java.util.List;
 public class Menus {
 
     @Id
-    private String id;
+    private int id;
 
     private String name;
 
     private String path;
 
-    private String parentid;
+    @Column(nullable = true)
+    private int parentid;
 }
